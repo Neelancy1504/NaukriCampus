@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const serverless = require("serverless-http");
 const cors = require('cors');
 require('dotenv').config();
 
@@ -19,3 +20,6 @@ app.use('/api/auth', authRoutes);
 
 const jobRoutes = require('./routes/job');
 app.use('/api/jobs', jobRoutes);
+
+// Export for Vercel
+module.exports.handler = serverless(app);
