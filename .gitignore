@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+server/node_modules/
+naukri-frontend/node_modules/
+
+# Environment variables
+.env
+
+# Build folders
+build/
+naukri-frontend/build/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE-specific files
+.vscode/
+.DS_Store
+
+# Output from deployments
+dist/
+
+# OS generated files
+Thumbs.db
