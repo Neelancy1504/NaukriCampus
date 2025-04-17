@@ -6,7 +6,20 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+const allowedOrigins = ['https://naukri-campus.vercel.app'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
 
 const PORT = process.env.PORT || 5000;
 
